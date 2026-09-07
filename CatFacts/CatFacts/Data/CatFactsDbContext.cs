@@ -1,3 +1,4 @@
+using CatFacts.Data.Seed;
 using CatFacts.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
@@ -13,4 +14,11 @@ public class CatFactsDbContext : DbContext
     }
 
     public DbSet<CatFact> CatFacts { get; set;}
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        CatFactSeedData.Seed(modelBuilder);
+    }
 }
