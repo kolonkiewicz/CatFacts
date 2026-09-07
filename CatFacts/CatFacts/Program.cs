@@ -1,3 +1,9 @@
+using CatFacts.Data;
+using CatFacts.Models;
+using CatFacts.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+
 namespace CatFacts
 {
     public class Program
@@ -9,6 +15,16 @@ namespace CatFacts
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddDbContext<CatFactsDbContext>( options =>
+                options.UseSqlServer(
+                    builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddHttpClient<ICatFactService, CatFactService>();
+
+            builder.Services.AddScoped<ICatFactRepository, CatFactRepository>();
+
+            builder.Services.AddScoped<IFileService, FileService>();
+            
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
