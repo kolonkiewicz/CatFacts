@@ -1,5 +1,6 @@
 using CatFacts.Models;
 using CatFacts.Services;
+using CatFacts.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -8,15 +9,26 @@ namespace CatFacts.Controllers
     public class HomeController : Controller
     {
         private readonly ICatFactService _catFactService;
+        private readonly ICatFactRepository _repostory;
 
-        public HomeController( ICatFactService catFactService)
+        public HomeController( 
+            ICatFactService catFactService,
+            ICatFactRepository repository)
         {
             _catFactService = catFactService;
+            _repostory = repository;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var recentFacts = await _repostory.GetAllAsync();
+
+            var viewModel = new HomeViewModel
+            {
+                RecentFacts = recentFacts.Take(5).ToList()
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -24,7 +36,16 @@ namespace CatFacts.Controllers
         {
             var catFact = await _catFactService.GetRandomFactAsync();
 
-            return View("Index", catFact);
+            var recentFacts = await _repostory.GetAllAsync();
+
+            var viewModel = new HomeViewModel
+            {
+                CurrentFact = catFact,
+                RecentFacts = recentFacts.Take(5).ToList()
+                
+            };
+
+            return View("Index", viewModel);
         }
     }
 }

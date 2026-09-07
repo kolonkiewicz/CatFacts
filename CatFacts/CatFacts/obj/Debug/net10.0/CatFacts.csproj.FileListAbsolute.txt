@@ -22,7 +22,6 @@ C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\scopedcss\bundle\CatFacts.styles.css
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\scopedcss\projectbundle\CatFacts.bundle.scp.css
-C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\compressed\jjj7x2kw3l-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\compressed\hnfroslpyt-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\compressed\w717a0jzbq-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\compressed\c8tavaed7w-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -84,8 +83,6 @@ C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\compressed\b17vzzi0t9-{0}-muycvpuwrr-muycvpuwrr.gz
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\compressed\4fw7aggulo-{0}-87fc7y1x7t-87fc7y1x7t.gz
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\compressed\a4qqrkqvdj-{0}-mlv21k5csn-mlv21k5csn.gz
-C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\compressed\ou2p97si82-{0}-jjdvn9aqi8-jjdvn9aqi8.gz
-C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\compressed\w25dk094ew-{0}-jjdvn9aqi8-jjdvn9aqi8.gz
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\staticwebassets.development.json
@@ -230,3 +227,6 @@ C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\bin\Debug\net10.0\
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\bin\Debug\net10.0\runtimes\win-x64\native\msalruntime.dll
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\bin\Debug\net10.0\runtimes\win-x86\native\msalruntime_x86.dll
 C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\CatFacts.csproj.Up2Date
+C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\compressed\ou2p97si82-{0}-0e7alaw9ht-0e7alaw9ht.gz
+C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\compressed\w25dk094ew-{0}-0e7alaw9ht-0e7alaw9ht.gz
+C:\Users\kolon\Desktop\NETWISE REPO\NETWISE\CatFacts\CatFacts\obj\Debug\net10.0\compressed\jjj7x2kw3l-{0}-zbkq1sskee-zbkq1sskee.gz

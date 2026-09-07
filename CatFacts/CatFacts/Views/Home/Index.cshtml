@@ -1,36 +1,99 @@
-﻿@model CatFacts.Models.CatFact?
+﻿@model CatFacts.ViewModels.HomeViewModel
 
 @{
     ViewData["Title"] = "Cat Facts";
 }
 
-<div class="text-center">
-    <h1>Cat Facts 🐱</h1>
+<div class="home-page">
 
-    <p>Get a random fact about cats.</p>
+    <!-- Hero Card -->
+    <section class="fact-card">
 
-    <form asp-controller="Home" asp-action="GetFact" method="post">
-        <button type="submit" class="btn btn-primary">
-            Get Cat Fact
-        </button>
-    </form>
+        <div class="fact-accent"></div>
 
-    @if (Model is not null)
-    {
-        <div class="mt-4">
-            <h3>Random Cat Fact</h3>
-
-            <p>
-                @Model.Fact
-            </p>
-
-            <p>
-                Length: @Model.Length
-            </p>
-
-            <p>
-                Retrieved: @Model.CreatedAt
-            </p>
+        <div class="fact-label">
+            CAT FACT OF THE MOMENT
         </div>
-    }
+
+        @if (Model.CurrentFact is not null)
+        {
+            <p class="fact-text">
+                @Model.CurrentFact.Fact
+            </p>
+        }
+        else
+        {
+            <p class="fact-text fact-placeholder">
+                Click the button below to discover a random fact about cats.
+            </p>
+        }
+
+        <form asp-controller="Home" asp-action="GetFact" method="post">
+            <button type="submit" class="get-fact-button">
+                Get Cat Fact
+            </button>
+        </form>
+
+        @if (Model.CurrentFact is not null)
+        {
+            <div class="fact-metadata">
+
+                <span class="mono">
+                    Length:
+                    <span class="metadata-value">
+                        @Model.CurrentFact.Length chars
+                    </span>
+                </span>
+
+                <span class="mono">
+                    Fetched at:
+                    <span class="metadata-value">
+                        @Model.CurrentFact.CreatedAt.ToString("MMM d, yyyy · hh:mm tt")
+                    </span>
+                </span>
+
+            </div>
+        }
+
+    </section>
+
+
+    <!-- Recent Activity -->
+    <section class="recent-activity">
+
+        <h2 class="section-title">
+            RECENT ACTIVITY
+        </h2>
+
+        <div class="recent-facts">
+
+            @for (int i = 0; i < Model.RecentFacts.Count; i++)
+            {
+                var fact = Model.RecentFacts[i];
+
+                <div class="recent-fact">
+
+                    <span class="fact-number @(i == 0 ? "active" : "")">
+                        @(i + 1)
+                    </span>
+
+                    <span class="recent-fact-text">
+                        @fact.Fact
+                    </span>
+
+                    <span class="recent-fact-length mono">
+                        @fact.Length c
+                    </span>
+
+                    <span class="recent-fact-date mono">
+                        @fact.CreatedAt.ToString("MMM d, yyyy · hh:mm tt")
+                    </span>
+
+                </div>
+            }
+
+        </div>
+
+    </section>
+
 </div>
