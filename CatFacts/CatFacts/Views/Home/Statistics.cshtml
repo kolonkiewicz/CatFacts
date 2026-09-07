@@ -1,0 +1,225 @@
+@model CatFacts.ViewModels.StatisticsViewModel?
+
+@{
+    ViewData["Title"] = "Statistics";
+}
+
+<div class="statistics-page">
+
+    <div class="statistics-header">
+
+        <h1>Statistics</h1>
+
+        <p>
+            Aggregate insights across all collected cat facts.
+        </p>
+
+    </div>
+
+
+    @if (Model is null)
+    {
+        <div class="statistics-empty">
+            No facts have been collected yet.
+        </div>
+    }
+    else
+    {
+        <div class="statistics-grid">
+
+            <div class="stat-card">
+
+                <div class="stat-card-header">
+
+                    <span class="stat-label">
+                        Total Facts Collected
+                    </span>
+
+                    <span class="stat-icon">
+                        📋
+                    </span>
+
+                </div>
+
+                <p class="stat-value mono">
+                    @Model.TotalFacts
+                </p>
+
+                <p class="stat-sub">
+                    facts in history
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-card-header">
+
+                    <span class="stat-label">
+                        Average Fact Length
+                    </span>
+
+                    <span class="stat-icon">
+                        📏
+                    </span>
+
+                </div>
+
+                <p class="stat-value mono">
+                    @Model.AverageLength
+                </p>
+
+                <p class="stat-sub">
+                    characters per fact
+                </p>
+
+            </div>
+
+
+            <div class="stat-card stat-card-accent">
+
+                <div class="stat-card-header">
+
+                    <span class="stat-label">
+                        Shortest Fact
+                    </span>
+
+                    <span class="stat-icon">
+                        🐾
+                    </span>
+
+                </div>
+
+                <p class="stat-value mono">
+                    @Model.ShortestLength chars
+                </p>
+
+                <p class="stat-sub">
+                    @Model.ShortestFact
+                </p>
+
+            </div>
+
+
+            <div class="stat-card stat-card-accent">
+
+                <div class="stat-card-header">
+
+                    <span class="stat-label">
+                        Longest Fact
+                    </span>
+
+                    <span class="stat-icon">
+                        📖
+                    </span>
+
+                </div>
+
+                <p class="stat-value mono">
+                    @Model.LongestLength chars
+                </p>
+
+                <p class="stat-sub">
+                    @Model.LongestFact
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="statistics-section">
+
+            <p class="statistics-section-title">
+                Length Distribution
+            </p>
+
+            <div class="distribution">
+
+                @{
+                    var maxCount = Math.Max(
+                        Model.Distribution.Max(x => x.Count),
+                        1);
+                }
+
+                @foreach (var bucket in Model.Distribution)
+                {
+                    var height = bucket.Count == 0
+                        ? 0
+                        : (bucket.Count * 100.0 / maxCount);
+
+                    <div class="distribution-column">
+
+                        <span class="distribution-count mono">
+                            @bucket.Count
+                        </span>
+
+                        <div class="distribution-bar-container">
+
+                            <div
+                                class="distribution-bar"
+                                style="height: @(height)%;">
+                            </div>
+
+                        </div>
+
+                        <span class="distribution-label mono">
+                            @bucket.Label
+                        </span>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+        <div class="statistics-section">
+
+            <p class="statistics-section-title">
+                Summary Breakdown
+            </p>
+
+            <div class="summary-list">
+
+                <div class="summary-row">
+                    <span>Facts collected</span>
+                    <span class="mono">
+                        @Model.TotalFacts
+                    </span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Avg. length</span>
+                    <span class="mono">
+                        @Model.AverageLength chars
+                    </span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Min length</span>
+                    <span class="mono">
+                        @Model.ShortestLength chars
+                    </span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Max length</span>
+                    <span class="mono">
+                        @Model.LongestLength chars
+                    </span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Length range</span>
+                    <span class="mono">
+                        @(Model.LongestLength - Model.ShortestLength) chars
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+    }
+
+</div>

@@ -47,5 +47,43 @@ namespace CatFacts.Controllers
 
             return View("Index", viewModel);
         }
+
+        public async Task<IActionResult> History(
+            string? keyword,
+            DateTime? from,
+            DateTime? to,
+            int page = 1)
+        {
+            const int pageSize = 5;
+
+            var history = await _repostory.GetHistoryAsync(
+                keyword,
+                from,
+                to,
+                page,
+                pageSize
+            );
+
+            return View(history);
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var fact = await _repostory.GetByIdAsync(id);
+
+            if ( fact is null)
+            {
+                return NotFound();
+            }
+
+            return Json(fact);
+        }
+
+        public async Task<IActionResult> Statistics()
+        {
+            var statistics = await _repostory.GetStatisticsAsync();
+
+            return View(statistics);
+        }
     }
 }
