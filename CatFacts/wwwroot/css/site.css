@@ -718,7 +718,7 @@ STATISTICCS
     flex: 1;
     width: 100%;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-end; 
 }
 
 .distribution-bar {
@@ -735,7 +735,6 @@ STATISTICCS
 
 .distribution-label {
     color: #6b7490;
-
     font-size: 10px;
 }
 

@@ -146,7 +146,7 @@
                 {
                     var height = bucket.Count == 0
                         ? 0
-                        : (bucket.Count * 100.0 / maxCount);
+                        : (int)Math.Round(bucket.Count * 100.0 / maxCount);
 
                     <div class="distribution-column">
 
